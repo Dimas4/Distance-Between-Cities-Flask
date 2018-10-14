@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="login-page">
+      <div class="form">
+        <form class="login-form" action="" method="post" novalidate>
+             <p>
+                {{ form.point_1(size=32, placeholder='Point 1') }}
+            </p>
+            <p>
+                {{ form.point_2(size=32, placeholder='Point 2') }}
+            </p>
+            <p>{{ form.submit(color='green') }}</p>
+
+            <p id="error_field"></p>
+
+
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/js.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').on('submit', function (event) {
+                $.ajax({
+                    data: {
+                        point_1 : $('#point_1').val(),
+                        point_2 : $('#point_2').val(),
+                    },
+                    type: 'POST',
+                    url: '/'
+                }) 
+                    .done(function (data) {
+                        if (data.error){
+                           $('#error_field').text(data.error).show();
+
+                        }
+                        else {
+                            $('#error_field').text(data.answer).show();
+                        }
+                    })
+
+                event.preventDefault();
+            })
+        })
+    </script>
+
+</body>
+</html>
