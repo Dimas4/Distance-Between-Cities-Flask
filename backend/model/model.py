@@ -9,7 +9,7 @@ class DistanceModel(db.Model):
     __table_args__ = db.UniqueConstraint('city_1', 'city_2', name='_city_1_city_2'),
 
     @classmethod
-    def check_points(cls, point_1, point_2):
+    def get_distance(cls, point_1, point_2):
         distance = db.session.query(cls).filter_by(city_1=point_1, city_2=point_2).first()
         if not distance:
             distance = db.session.query(cls).filter_by(city_1=point_2, city_2=point_1).first()

@@ -7,7 +7,7 @@ from app.create_app import config
 class Service:
     def post(self, point_1, point_2):
         if point_1 and point_2:
-            distance = DistanceModel.check_points(point_1, point_2)
+            distance = DistanceModel.get_distance(point_1, point_2)
 
             if not distance:
                 distance = get_distance(point_1, point_2, config['api']['url'], config['api']['token'])

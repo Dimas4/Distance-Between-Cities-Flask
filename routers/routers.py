@@ -1,4 +1,3 @@
-
 from flask import render_template, request
 from service.service import Service
 from flask_classy import FlaskView

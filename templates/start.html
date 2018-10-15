@@ -26,10 +26,14 @@
       </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+{#    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/js.js') }}"></script>
     <script>
+
         $(document).ready(function () {
+            console.log(5+4);
+
             $('form').on('submit', function (event) {
                 $.ajax({
                     data: {
