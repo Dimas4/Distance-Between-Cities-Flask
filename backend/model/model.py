@@ -22,4 +22,4 @@ class DistanceModel(db.Model):
         db.session.commit()
 
     def __repr__(self):
-        return f"Book({self.city_1} and {self.city_2} = {self.distance})"
+        return f"Distance({self.city_1} and {self.city_2} = {self.distance})"
