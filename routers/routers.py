@@ -22,7 +22,6 @@ class View(FlaskView):
 
             if not distance:
                 distance = get_distance(point_1, point_2, config['api']['url'], config['api']['token'])
-
                 DistanceModel.create_object(city_1=point_1, city_2=point_2,
                                             distance=distance)
 

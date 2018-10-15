@@ -1,5 +1,5 @@
 from app.create_app import app, db
-from routers.routers import *
+from routers.routers import View
 
 
 View.register(app)

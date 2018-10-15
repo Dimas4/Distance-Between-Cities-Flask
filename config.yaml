@@ -1,6 +1,6 @@
 api:
   url: http://www.mapquestapi.com/directions/v2/routematrix?key={}
-  token: ujszO4J2aAahEI7p6iRYrAPxZjM0gYMc
+  token: 
 
 database:
   type: postgresql
