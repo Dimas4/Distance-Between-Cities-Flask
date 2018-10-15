@@ -1,3 +1,10 @@
 api:
   url: http://www.mapquestapi.com/directions/v2/routematrix?key={}
-  token: 
+  token: ujszO4J2aAahEI7p6iRYrAPxZjM0gYMc
+
+database:
+  type: postgresql
+  username: ivan
+  password: ivanivan
+  host: localhost
+  db_name: flasknew
